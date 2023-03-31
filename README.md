@@ -1,6 +1,9 @@
 # easy-ja-postal-code-search-address [![npm version](https://img.shields.io/npm/v/easy-ja-postal-code-search-address.svg?style=flat)](https://www.npmjs.com/package/easy-ja-postal-code-search-address)
 
-郵便番号から住所を簡単に検索するためのヘルパークラス
+郵便番号から住所を簡単に検索するためのヘルパークラス<br>
+
+**<a href="https://www.npmjs.com/package/easy-ja-postal-code-generate-json" target="_blank">easy-ja-postal-code-generate-json</a>**<br>
+で生成した json ファイルが必要になります。
 
 # Features
 
@@ -11,6 +14,7 @@
 
 # Requirement
 
+- easy-ja-postal-code-generate-json
 - Node.js v18.13.0
 
 # Usage
@@ -25,7 +29,9 @@ npm i easy-ja-postal-code-search-address
 import { SearchAddress } from 'easy-ja-postal-code-search-address'
 ```
 
-使い方の詳細は examples フォルダをご覧ください
+# Examples
+
+サンプルファイルは examples フォルダをご覧ください
 
 # Initialize
 
