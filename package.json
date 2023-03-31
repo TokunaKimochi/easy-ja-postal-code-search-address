@@ -6,15 +6,9 @@
   "main": "./dist/index.js",
   "types": "./dist/allType.d.ts",
   "scripts": {
+    "build": "run-s remove tsc",
     "tsc": "tsc",
-    "example_simple": "cd ./examples/simple && npm run dev",
-    "example_next": "cd ./examples/nextjs && npm run dev",
-    "build": "run-s remove s_build g_build",
-    "s_build": "npm --prefix ./packages/search-address run tsc",
-    "g_build": "npm --prefix ./packages/generate-json run tsc",
-    "remove": "run-p s_remove g_remove",
-    "s_remove": "rimraf ./packages/search-address/dist",
-    "g_remove": "rimraf ./packages/generate-json/dist"
+    "remove": "rimraf ./dist"
   },
   "keywords": [
     "zip",

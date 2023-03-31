@@ -1,10 +1,7 @@
 # node_modules
 node_modules/
 
-# generate dist
-packages/generate-json/dist
-packages/search-address/dist
-
-# generate json
-examples/**/zip/*.json
+# json file
+examples/nextjs/public/
+examples/simple/public/
 
