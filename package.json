@@ -1,0 +1,43 @@
+{
+  "name": "easy-ja-postal-code-search-address",
+  "version": "1.0.2",
+  "description": "郵便番号から住所を簡単に検索するためのヘルパークラス",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/allType.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "example_simple": "cd ./examples/simple && npm run dev",
+    "example_next": "cd ./examples/nextjs && npm run dev",
+    "build": "run-s remove s_build g_build",
+    "s_build": "npm --prefix ./packages/search-address run tsc",
+    "g_build": "npm --prefix ./packages/generate-json run tsc",
+    "remove": "run-p s_remove g_remove",
+    "s_remove": "rimraf ./packages/search-address/dist",
+    "g_remove": "rimraf ./packages/generate-json/dist"
+  },
+  "keywords": [
+    "zip",
+    "postal code",
+    "japanese",
+    "javascript"
+  ],
+  "author": "go.nishiduka.1985@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/underground0930/easy-ja-postal-code-search-address"
+  },
+  "bugs": {
+    "url": "https://github.com/underground0930/easy-ja-postal-code-search-address/issues"
+  },
+  "homepage": "https://github.com/underground0930/easy-ja-postal-code-search-address#readme.md",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.3",
+    "rimraf": "^4.4.1",
+    "typescript": "^4.9.5"
+  }
+}

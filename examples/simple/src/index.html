@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap{
+      padding: 20px;
+    }
+    #error{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>sample</h1>
+  <div class="wrap">
+    <h2>郵便番号</h2>
+    <p>〒<input type="text" id="zip" placeholder="郵便番号入力">
+      <button id="zibButton">住所表示</button>
+    </p>
+    <h3>住所</h3>
+    <p>
+      <input type="text" id="prefecture">
+    </p>
+    <p>
+      <input type="text" id="city">
+    </p>
+    <p>
+      <input type="text" id="other">
+    </p>
+    <h3>エラー文言</h3>
+    <div id="error"></div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>
