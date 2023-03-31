@@ -1,6 +1,6 @@
 {
   "name": "easy-ja-postal-code-search-address",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "郵便番号から住所を簡単に検索するためのヘルパークラス",
   "type": "module",
   "main": "./dist/index.js",
