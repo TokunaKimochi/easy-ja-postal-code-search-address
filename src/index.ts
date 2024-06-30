@@ -9,21 +9,21 @@ export class SearchAddress {
   private zipCache: ZipAllData = {}
   private zipIndex: ZipIndex = []
 
-  constructor({ baseUrl, fallback }: { baseUrl: string; fallback?: () => void }) {
-    this.baseUrl = baseUrl
-    this.fallback = fallback
-    this.#init()
-  }
-
-  async #init() {
-    const result = await this.#fetchData<ZipIndex>(this.baseUrl, 'index.json')
+  private constructor() {}
+  
+  static async init({ baseUrl, fallback }: { baseUrl: string; fallback?: () => void }) {
+    const my = new this()
+    my.baseUrl = baseUrl
+    my.fallback = fallback
+    const result = await my.#fetchData<ZipIndex>(my.baseUrl, 'index.json')
     if (!result) {
       console.log('index.json fetch failed')
-      this.fallback?.()
+      my.fallback?.()
       return
     }
-    this.isReady = true
-    this.zipIndex = result
+    my.isReady = true
+    my.zipIndex = result
+    return my
   }
 
   public fetchAbort() {

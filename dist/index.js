@@ -9,20 +9,20 @@ class SearchAddress {
     fallback;
     zipCache = {};
     zipIndex = [];
-    constructor({ baseUrl, fallback }) {
-        this.baseUrl = baseUrl;
-        this.fallback = fallback;
-        this.#init();
-    }
-    async #init() {
-        const result = await this.#fetchData(this.baseUrl, 'index.json');
+    constructor() { }
+    static async init({ baseUrl, fallback }) {
+        const my = new this();
+        my.baseUrl = baseUrl;
+        my.fallback = fallback;
+        const result = await my.#fetchData(my.baseUrl, 'index.json');
         if (!result) {
             console.log('index.json fetch failed');
-            this.fallback?.();
+            my.fallback?.();
             return;
         }
-        this.isReady = true;
-        this.zipIndex = result;
+        my.isReady = true;
+        my.zipIndex = result;
+        return my;
     }
     fetchAbort() {
         this.controller.abort();

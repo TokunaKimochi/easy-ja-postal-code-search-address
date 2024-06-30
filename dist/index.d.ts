@@ -8,10 +8,11 @@ export declare class SearchAddress {
     private fallback?;
     private zipCache;
     private zipIndex;
-    constructor({ baseUrl, fallback }: {
+    private constructor();
+    static init({ baseUrl, fallback }: {
         baseUrl: string;
         fallback?: () => void;
-    });
+    }): Promise<SearchAddress | undefined>;
     fetchAbort(): void;
     search({ zipInput }: {
         zipInput: string;
