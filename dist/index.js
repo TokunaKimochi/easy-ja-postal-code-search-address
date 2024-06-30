@@ -1,4 +1,7 @@
-export class SearchAddress {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SearchAddress = void 0;
+class SearchAddress {
     isReady = false;
     isLoading = false;
     controller = new AbortController();
@@ -76,3 +79,4 @@ export class SearchAddress {
         return { address, error: null };
     }
 }
+exports.SearchAddress = SearchAddress;
