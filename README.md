@@ -1,4 +1,6 @@
-# easy-ja-postal-code-search-address [![npm version](https://img.shields.io/npm/v/easy-ja-postal-code-search-address.svg?style=flat)](https://www.npmjs.com/package/easy-ja-postal-code-search-address)
+# easy-ja-postal-code-search-address 改
+
+easy-ja-postal-code-search-address [![npm version](https://img.shields.io/npm/v/easy-ja-postal-code-search-address.svg?style=flat)](https://www.npmjs.com/package/easy-ja-postal-code-search-address) の CommonJS 版
 
 郵便番号から住所を簡単に検索するためのヘルパークラス<br>
 
@@ -36,7 +38,7 @@ import { SearchAddress } from 'easy-ja-postal-code-search-address'
 # Initialize
 
 ```javascript
-const afpc = new SearchAddress({
+const afpc = await SearchAddress.init({
   baseUrl: '/json/zip/',
   fallback: () => alert('初期化に失敗しました'),
 })

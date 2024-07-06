@@ -11,18 +11,18 @@ class SearchAddress {
     zipIndex = [];
     constructor() { }
     static async init({ baseUrl, fallback }) {
-        const my = new this();
-        my.baseUrl = baseUrl;
-        my.fallback = fallback;
-        const result = await my.#fetchData(my.baseUrl, 'index.json');
+        const self = new this();
+        self.baseUrl = baseUrl;
+        self.fallback = fallback;
+        const result = await self.#fetchData(self.baseUrl, 'index.json');
         if (!result) {
             console.log('index.json fetch failed');
-            my.fallback?.();
+            self.fallback?.();
             return;
         }
-        my.isReady = true;
-        my.zipIndex = result;
-        return my;
+        self.isReady = true;
+        self.zipIndex = result;
+        return self;
     }
     fetchAbort() {
         this.controller.abort();
